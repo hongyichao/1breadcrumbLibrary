@@ -1,0 +1,56 @@
+# ──────────────────────────────
+# .NET / C#
+# ──────────────────────────────
+bin/
+obj/
+*.user
+*.suo
+*.vs/
+.vs/
+*.log
+logs/
+
+# EF Core migrations bundle
+efbundle
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# Publish output
+publish/
+out/
+
+# Secrets
+appsettings.*.local.json
+secrets.json
+
+# ──────────────────────────────
+# Node / React
+# ──────────────────────────────
+node_modules/
+frontend/build/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ──────────────────────────────
+# OS
+# ──────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ──────────────────────────────
+# IDEs
+# ──────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo

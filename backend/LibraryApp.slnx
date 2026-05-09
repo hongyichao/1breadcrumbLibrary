@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="LibraryApp.Api/LibraryApp.Api.csproj" />
+  <Project Path="LibraryApp.Database/LibraryApp.Database.csproj" />
+  <Project Path="LibraryApp.Tests.Integration/LibraryApp.Tests.Integration.csproj" />
+  <Project Path="LibraryApp.Tests.Unit/LibraryApp.Tests.Unit.csproj" />
+</Solution>

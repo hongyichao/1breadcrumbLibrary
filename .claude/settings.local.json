@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:libapi.1breadcrumb.com)",
+      "Bash(dotnet build *)",
+      "Bash(dotnet tool *)",
+      "Bash(dotnet ef *)",
+      "Bash(dotnet test *)",
+      "Bash(npx create-react-app *)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}
