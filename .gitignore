@@ -48,9 +48,10 @@ Thumbs.db
 desktop.ini
 
 # ──────────────────────────────
-# IDEs
+# IDEs & tools
 # ──────────────────────────────
 .idea/
 .vscode/
+.claude/
 *.swp
 *.swo
