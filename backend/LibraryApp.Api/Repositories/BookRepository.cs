@@ -18,7 +18,7 @@ public class BookRepository : IBookRepository
         var query = _context.Books.AsQueryable();
 
         if (!string.IsNullOrWhiteSpace(search))
-            query = query.Where(b => b.Title.Contains(search));
+            query = query.Where(b => b.Title.ToLower().Contains(search.ToLower()));
 
         if (isAvailable.HasValue)
             query = query.Where(b => b.IsAvailable == isAvailable.Value);

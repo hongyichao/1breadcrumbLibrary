@@ -1,6 +1,6 @@
 import { Book, CreateBookRequest, UpdateBookRequest } from '../types/book';
 
-const BASE_URL = 'http://localhost:5110/api';
+const BASE_URL = process.env.REACT_APP_API_URL ?? 'http://localhost:5110/api';
 
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
   const response = await fetch(`${BASE_URL}${path}`, {
@@ -9,8 +9,15 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
   });
 
   if (!response.ok) {
-    const error = await response.text();
-    throw new Error(error || `Request failed: ${response.status}`);
+    let message = `Request failed: ${response.status}`;
+    try {
+      const problem = await response.json();
+      message = problem.detail ?? problem.title ?? message;
+    } catch {
+      const text = await response.text();
+      if (text) message = text;
+    }
+    throw new Error(message);
   }
 
   if (response.status === 204) return undefined as unknown as T;

@@ -44,14 +44,22 @@ function App() {
   };
 
   const handleToggleAvailability = async (id: number) => {
-    await libraryApi.toggleAvailability(id);
-    await fetchBooks();
+    try {
+      await libraryApi.toggleAvailability(id);
+      await fetchBooks();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to update availability');
+    }
   };
 
   const handleDelete = async (id: number) => {
     if (!window.confirm('Delete this book?')) return;
-    await libraryApi.deleteBook(id);
-    await fetchBooks();
+    try {
+      await libraryApi.deleteBook(id);
+      await fetchBooks();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to delete book');
+    }
   };
 
   const totalPages = Math.ceil(books.length / PAGE_SIZE);
