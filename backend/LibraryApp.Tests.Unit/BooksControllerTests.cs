@@ -51,7 +51,7 @@ public class BooksControllerTests
     public async Task GetBook_WhenFound_ReturnsOkWithDto()
     {
         var book = new Book { Id = 1, Title = "Clean Code", Author = "R. Martin", Isbn = "123", PublishedDate = new DateOnly(2008, 1, 1), Owner = "Alice", IsAvailable = true };
-        _repoMock.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(book);
+        _repoMock.Setup(r => r.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(book);
 
         var result = await _controller.GetBook(1);
 
